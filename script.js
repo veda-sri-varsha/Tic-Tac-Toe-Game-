@@ -175,6 +175,14 @@ function endGame(winner) {
 
   resultBanner.innerHTML = "";
 
+  if (window.innerWidth <= 900) {
+    img.style.width = "80%";
+  } else if (window.innerWidth <= 600) {
+    img.style.width = "70%";
+  } else {
+    img.style.width = "1370px"; 
+  }
+
   let buttonsContainer = document.createElement("div");
   buttonsContainer.style.display = "flex";
   buttonsContainer.style.justifyContent = "center";
