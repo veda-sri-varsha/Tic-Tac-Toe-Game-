@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title> Tic-Tac-Toe</title>
+</head>
+
+<body>
+    <div class="game-wrapper" id="game-wrapper">
+        <div class="restart-button" id="restart-button">
+            <img src="public/images/Restart.png" alt="restart-button">
+        </div>
+        <div class="game-container">
+            <div class="game-board" id="game-board">
+                <div class="cell" id="cell"><img src="public/images/Slot-background.png" alt="Slot Image" /></div>
+                <div class="cell" id="cell"><img src="public/images/Slot-background.png" alt="Slot Image" /></div>
+                <div class="cell" id="cell"><img src="public/images/Slot-background.png" alt="Slot Image" /></div>
+                <div class="cell" id="cell"><img src="public/images/Slot-background.png" alt="Slot Image" /></div>
+                <div class="cell" id="cell"><img src="public/images/Slot-background.png" alt="Slot Image" /></div>
+                <div class="cell" id="cell"><img src="public/images/Slot-background.png" alt="Slot Image" /></div>
+                <div class="cell" id="cell"><img src="public/images/Slot-background.png" alt="Slot Image" /></div>
+                <div class="cell" id="cell"><img src="public/images/Slot-background.png" alt="Slot Image" /></div>
+                <div class="cell" id="cell"><img src="public/images/Slot-background.png" alt="Slot Image" /></div>
+
+                <div class="corner-dot">
+                    <img src="public/images/misc-elipse.png" class="corner top-left" id="corner top-left" />
+                    <img src="public/images/misc-elipse.png" class="corner top-right" id="corner top-right" />
+                    <img src="public/images/misc-elipse.png" class="corner bottom-left" id="corner bottom-left" />
+                    <img src="public/images/misc-elipse.png" class="corner bottom-right" id="corner bottom-right" />
+                </div>
+
+                <div class="left-arrows" id="left-arrows">
+                    <div class="arrow" id="arrow"></div>
+                    <div class="arrow" id="arrow"></div>
+                </div>
+
+                <div class="right-arrows" id="right-arrows">
+                    <div class="arrow" id="arrow"></div>
+                    <div class="arrow" id="arrow"></div>
+                </div>
+
+                <div class="result-banner star-wins">
+                    Star Wins
+                    <div class="next-round" id="next-round">
+                        <img src="public/images/Nextround.png" alt="next-round">
+                    </div>
+                    <div class="restart-button" id="restart-button">
+                        <img src="public/images/Restart.png" alt="restart-button">
+                    </div>
+                </div>
+                <div class="result-banner planet-wins">
+                    Planet Wins
+                    <div class="next-round" id="next-round">
+                        <img src="public/images/Nextround.png" alt="next-round">
+                    </div>
+                    <div class="restart-button" id="restart-button">
+                        <img src="public/images/Restart.png" alt="restart-button">
+                    </div>
+                </div>
+                <div class="result-banner draw">
+                    It's a Draw
+                    <div class="next-round" id="next-round">
+                        <img src="public/images/Nextround.png" alt="next-round">
+                    </div>
+                    <div class="restart-button" id="restart-button">
+                        <img src="public/images/Restart.png" alt="restart-button">
+                    </div>
+                </div>
+
+
+
+                <div class="score-display" id="score-display">
+                    <div class="score-item" id="score-item">
+                        <div class="icon star-icon">
+                            <img src="public/images/Planet asset.svg" alt="star-icon">
+                            <span class="score" id="score">0/0</span>
+                        </div>
+
+                        <div class="reset-button" id="reset-button">
+                            <img src="public/images/Icon button.png" alt="icon-button">
+                        </div>
+
+                        <div class="icon planet-icon">
+                            <img src="public/images/Star asset.png" alt="planet-icon">
+                            <span class="score" id="score">0/0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
