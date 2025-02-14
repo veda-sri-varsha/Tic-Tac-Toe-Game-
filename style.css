@@ -202,7 +202,7 @@ body {
 @media screen and (max-width: 900px) {
 
   .game-wrapper{
-    margin-top: 200px;
+    margin-top: 150px;
     margin-left: 12px;
     /* overflow: hidden; */
   }
