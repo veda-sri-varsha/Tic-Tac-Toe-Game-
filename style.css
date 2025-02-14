@@ -201,10 +201,7 @@ body {
 
 @media screen and (max-width: 950px) {
 
-  *{
-    max-width: 100%;
-    overflow-x: hidden; 
-  }
+  
 
   .game-wrapper{
     margin-top: 90px;
