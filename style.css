@@ -209,6 +209,7 @@ body {
 
   .game-container{
     flex-wrap: wrap;
+    margin-right: 10px;
     justify-content: center;
   } 
 
