@@ -204,12 +204,12 @@ body {
   .game-wrapper{
     margin-top: 90px;
     margin-left: 12px;
-    overflow: hidden;
+    /* overflow: "hidden"; */
   }
 
   .game-container{
     flex-wrap: wrap;
-    justify-items: center;
+    justify-content: center;
   } 
 
   .gameboard { 
