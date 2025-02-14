@@ -60,13 +60,30 @@ function computerMove() {
   let availableMoves = board.map((val, idx) => (val === "" ? idx : null)).filter(val => val !== null);
   if (availableMoves.length === 0) return;
 
-  let chosenMove = findWinningMove(currentPlayer) || findWinningMove(getOpponent()) || getRandomMove(availableMoves);
+  let chosenMove =
+    findWinningMove(currentPlayer) || 
+    findWinningMove(getOpponent()) || 
+    findForkMove(currentPlayer) || 
+    findForkMove(getOpponent()) || 
+    chooseCenter() || 
+    chooseCorner() ||
+    getRandomMove(availableMoves); 
 
   makeMove(chosenMove);
 }
 
 function getRandomMove(availableMoves) {
   return availableMoves[Math.floor(Math.random() * availableMoves.length)];
+}
+
+function chooseCenter() {
+  return board[4] === "" ? 4 : null; 
+}
+
+function chooseCorner() {
+  const corners = [0, 2, 6, 8];
+  let availableCorners = corners.filter(idx => board[idx] === "");
+  return availableCorners.length > 0 ? getRandomMove(availableCorners) : null;
 }
 
 function findWinningMove(player) {
@@ -78,6 +95,25 @@ function findWinningMove(player) {
         return i;
       }
       board[i] = "";
+    }
+  }
+  return null;
+}
+
+function findForkMove(player) {
+  for (let move of board.keys()) {
+    if (board[move] === "") {
+      board[move] = player;
+      let winningMoves = 0;
+      for (let i = 0; i < board.length; i++) {
+        if (board[i] === "") {
+          board[i] = player;
+          if (checkWin(player)) winningMoves++;
+          board[i] = "";
+        }
+      }
+      board[move] = "";
+      if (winningMoves >= 2) return move; 
     }
   }
   return null;
@@ -170,15 +206,14 @@ function endGame(winner) {
   img.style.objectFit = "contain";
   img.style.display = "block";
   img.style.margin = "0 auto";
-  img.classList.add("result-img"); 
   img.style.cursor = "pointer";
-
+  
   resultBanner.innerHTML = "";
 
-  if (window.innerWidth <= 900) {
-    img.style.width = "80%";
+  if (window.innerWidth <= 950) {
+    img.style.width = "100%";
   } else if (window.innerWidth <= 600) {
-    img.style.width = "70%";
+    img.style.width = "99%";
   } else {
     img.style.width = "1370px"; 
   }
@@ -192,6 +227,14 @@ function endGame(winner) {
   buttonsContainer.style.top = "290px";
   buttonsContainer.style.left = "50%";
   buttonsContainer.style.transform = "translateX(-50%)";
+
+  // if (window.innerWidth <= 900) {
+  //   buttonsContainer.style.width = "80%";
+  // } else if (window.innerWidth <= 600) {
+  //   buttonsContainer.style.width = "100%";
+  // } else {
+  //   buttonsContainer.style.width = "1370px"; 
+  // }
 
   let nextRoundButton = document.createElement("img");
   nextRoundButton.src = "public/images/Nextround.png";
