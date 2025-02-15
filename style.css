@@ -199,9 +199,7 @@ body {
   animation: fadeIn 0.5s ease-out;
 }
 
-@media screen and (max-width: 950px) {
-
-  
+@media screen and (max-width: 900px) {
 
   .game-wrapper{
     margin-top: 50px;
